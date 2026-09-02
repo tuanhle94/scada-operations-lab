@@ -21,4 +21,6 @@ Interview concept files are created when that part is built. Do not claim Part 2
 
 After Part 8, optional **Project 2** is the [Ignition Design Challenge](project-2-ignition-design-challenge.md) in a new Ignition project. Do not start it before the pipeline demo is packaged.
 
+PLC literacy, MQTT, OT security, and the Core exam sit beside this order: [adjacent-skills.md](adjacent-skills.md). They do not replace the next checklist item.
+
 Architecture detail lives in [portfolio-project.md](portfolio-project.md). Use it as a reference, not as tonight’s checklist.

@@ -10,6 +10,8 @@ Use this in interviews and while building. Do not skip [Inductive University](ht
 
 If you want **Core certification**, those videos **are** the curriculum. An assistant cannot replace that.
 
+Timing, PLC literacy, MQTT, and OT security: [adjacent-skills.md](adjacent-skills.md). Do not pause Part 2 to “master MQTT.”
+
 ## How to learn while building
 
 Do not watch a complete Ignition course before the next checklist item. Use this loop:

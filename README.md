@@ -24,3 +24,5 @@ Follow [docs/build-order.md](docs/build-order.md). Do not skip ahead.
 | 8 | Five-minute demo and interview packaging |
 
 After Part 8: [Project 2 — Ignition Design Challenge](docs/project-2-ignition-design-challenge.md) (separate Ignition project, not an extension of PipelineOps).
+
+Beside the build (PLC literacy, MQTT, OT security, Core exam): [docs/adjacent-skills.md](docs/adjacent-skills.md).
