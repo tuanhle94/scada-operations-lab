@@ -17,7 +17,7 @@
 
 ## Start Here: First Build Session
 
-Do not read this entire document before starting. The detailed architecture sections are references for later milestones.
+Do not read this entire document before starting. Use [build-order.md](build-order.md) and the Part session files. The detailed architecture sections are references for later milestones.
 
 Your first goal is a complete, narrow Supervisory Control and Data Acquisition (SCADA) path:
 
@@ -62,6 +62,8 @@ If the available study session ends here, stop with a working screen. Save the p
 
 ### Part 2: Add History and One Alarm
 
+Follow [portfolio-part-2.md](portfolio-part-2.md).
+
 - [ ] Start a local Postgres instance.
 - [ ] Create and verify the Ignition database connection.
 - [ ] Enable history for the bearing-temperature tag.
@@ -77,6 +79,8 @@ If the available study session ends here, stop with a working screen. Save the p
 - [ ] Confirm that the alarm lifecycle appears in history.
 
 ### Part 3: Preserve Evidence
+
+Follow [portfolio-part-3.md](portfolio-part-3.md).
 
 - [ ] Save screenshots of the changing value, trend, and alarm views.
 - [ ] Export or back up the Ignition project.
@@ -112,6 +116,8 @@ How can it fail?
 - Advanced performance experiments
 
 Finish the first vertical slice before opening any of those branches.
+
+Session files for later work: [Part 4 UDT](portfolio-part-4.md), [Part 5 failures](portfolio-part-5.md), [Part 6 .NET](portfolio-part-6.md), [Part 7 reliability](portfolio-part-7.md), [Part 8 demo](portfolio-part-8.md). Full order: [build-order.md](build-order.md).
 
 ### Milestone Order
 

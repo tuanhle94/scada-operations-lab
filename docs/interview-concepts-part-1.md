@@ -37,6 +37,12 @@ Supervisory Control and Data Acquisition is the system operators use to watch li
 **If they ask “is this control?”**  
 No. The project boundary is monitoring. Bearing temperature is a reading, not a setpoint or a command.
 
+**If they ask whether Part 1 is enough for a SCADA role:**  
+No. Part 1 is the live path only. The hireable portfolio is [build-order.md](build-order.md) through the five-minute demo: history and alarms, evidence, two pumps from a UDT, failure scenarios, a .NET maintenance API, and containment.
+
+**If they ask whether I program PLCs:**  
+No, and this lab does not try to. A Programmable Logic Controller (PLC) runs the fast, safety-adjacent control: start, stop, interlocks. SCADA supervises that controller. I need PLC literacy—scan cycle, I/O, why the HMI must not replace the PLC—so I can map tags and talk to controls engineers. Advanced ladder or safety logic is a different job.
+
 ---
 
 ## 2. Tag

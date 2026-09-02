@@ -1,6 +1,6 @@
 # Portfolio Part 1: Display One Changing Value
 
-This is the only document needed for the first build session. Do not read the full [portfolio project](portfolio-project.md) before this works.
+This is the document for the first build session. After the checklist, follow [build-order.md](build-order.md). Do not read the full [portfolio project](portfolio-project.md) before Part 1 works.
 
 ## Cheat Sheet
 
@@ -362,4 +362,4 @@ Do not write historian, alarm, or data-quality notes until those features exist.
 - [x] Bind a numeric display to the bearing-temperature tag.
 - [x] Launch a Perspective session and confirm that the displayed value changes.
 
-When every box is checked, stop. Save the Designer project. Part 2 adds Postgres, history, and one high-temperature alarm.
+When every box is checked, stop. Save the Designer project. Next is [Part 2](portfolio-part-2.md): Postgres, history, and one high-temperature alarm.
