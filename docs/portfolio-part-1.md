@@ -56,7 +56,7 @@ Build one step
     -> record what was learned
 ```
 
-Do not watch a complete Ignition course first.
+Do not watch a complete Ignition course first. Official how-to-learn and interview wording: [how-i-learned-ignition.md](how-i-learned-ignition.md).
 
 ### Session Plan
 

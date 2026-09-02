@@ -22,3 +22,5 @@ Follow [docs/build-order.md](docs/build-order.md). Do not skip ahead.
 | 6 | .NET maintenance API on the pump screen |
 | 7 | Optional-service failures contained |
 | 8 | Five-minute demo and interview packaging |
+
+After Part 8: [Project 2 — Ignition Design Challenge](docs/project-2-ignition-design-challenge.md) (separate Ignition project, not an extension of PipelineOps).

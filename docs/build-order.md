@@ -2,6 +2,8 @@
 
 Do these in order. Do not skip ahead to prettier graphics, more pumps, OPC UA, .NET, or AI.
 
+How to learn (IU / manual vs assistant): [how-i-learned-ignition.md](how-i-learned-ignition.md).
+
 Part 1 is done. Open the next part file only when the previous checklist is complete.
 
 | Part | Session doc | Done when | Status |
@@ -16,5 +18,7 @@ Part 1 is done. Open the next part file only when the previous checklist is comp
 | 8 | [portfolio-part-8.md](portfolio-part-8.md) | Five-minute demo and interview packaging | Not started |
 
 Interview concept files are created when that part is built. Do not claim Part 2–8 features in interviews until their checklists are checked.
+
+After Part 8, optional **Project 2** is the [Ignition Design Challenge](project-2-ignition-design-challenge.md) in a new Ignition project. Do not start it before the pipeline demo is packaged.
 
 Architecture detail lives in [portfolio-project.md](portfolio-project.md). Use it as a reference, not as tonight’s checklist.

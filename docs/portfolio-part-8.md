@@ -50,3 +50,5 @@ Also:
 - [ ] Fill [interview-concepts-part-8.md](interview-concepts-part-8.md) with the spoken demo script.
 
 After this, the core portfolio is packageable. Optional AI or cloud is [portfolio-project.md](portfolio-project.md) extensions only.
+
+Designer practice after packaging: [Project 2 — Ignition Design Challenge](project-2-ignition-design-challenge.md). Do not start it before this checklist is done.

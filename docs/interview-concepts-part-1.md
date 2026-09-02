@@ -20,6 +20,9 @@ Part 1 proves the smallest live SCADA path before I add history, alarms, or .NET
 **What I built:**  
 Ignition Maker, project `PipelineOps`, tag `[default]Station1/P101/BearingTemperature`, view `PumpDetail`, page `/pump-p101`. An operator opens the browser and sees a changing °F value.
 
+**If they ask how you learned Ignition:**  
+See [how-i-learned-ignition.md](how-i-learned-ignition.md). Do not say an AI walked you through Designer. Say you built a monitoring app in Maker and used Inductive University and the manual when you did not know the click. Core certification, if you want it, is that video curriculum. An assistant does not replace it.
+
 ---
 
 ## 1. SCADA
