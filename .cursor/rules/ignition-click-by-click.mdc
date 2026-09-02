@@ -1,0 +1,25 @@
+---
+description: Give beginner click-by-click Ignition Designer, Gateway, and Perspective steps
+alwaysApply: true
+---
+
+# Ignition instructions must be click-by-click
+
+The user is new to Ignition. Any Designer, Gateway, Tag Browser, Perspective, or commissioning step must be exact clicks, not summaries.
+
+- Name the **application**: Designer, Gateway webpage (`localhost:8088`), or Perspective **client** in the browser. They are not the same.
+- Name the **panel**: Project Browser, Tag Browser, Property Editor, Perspective Components, Page Configuration.
+- If a panel may be hidden, include **View → Panels → [name]**.
+- One numbered step = one action. Say what to click, what to type, and **what they should see** after.
+- Include the control that is easy to miss: chain/binding icon, Apply vs OK, Ctrl+S, Page URL vs view name.
+- If 8.1 and 8.3 labels differ, give both (example: Launch Perspective / play-globe toolbar button).
+- Do not say “bind the tag” or “add a page.” Say which widget to select, which property (`props.value` vs `props.text`), and which dialog buttons.
+
+```markdown
+❌ Bind the LED to the bearing-temperature tag.
+
+✅ Click the LED Display on the PumpDetail canvas.
+   In Property Editor, find `props.value`.
+   Click the chain-link icon on that row.
+   ...
+```

@@ -1,0 +1,40 @@
+---
+description: Create an interview-concepts doc whenever a new project part or concept is explored
+alwaysApply: true
+---
+
+# Interview concepts with every part
+
+When we start or explore a new portfolio part, create or update a matching interview-concepts doc in the same session. Do not wait until the part is finished.
+
+- Path: `docs/interview-concepts-part-N.md` (example: `docs/interview-concepts-part-1.md`)
+- If the part file already exists, add cards for any new concept we just used. Do not rewrite the whole file.
+- Do not create a new part doc for a small follow-up on a concept already covered.
+
+Match the Part 1 format:
+
+- Title: `Interview Concepts: Part N`
+- Intro: memorize as spoken answers; four prompts; do not claim later features
+- Each concept: **Speak this**, then a table for What / Why / How I used it / How it can fail
+- Optional **If they ask** follow-up
+- End with a **30-second story** and a **Words to keep precise** table
+
+Only document concepts that exist in the current part. If history, alarms, OPC UA, or .NET are not built yet, do not write cards that claim they are.
+
+```markdown
+# Interview Concepts: Part 2
+
+Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Do not claim OPC UA or .NET until those exist.
+
+## 1. Tag history
+
+**Speak this:**
+One sentence an interviewer can hear first.
+
+| Prompt | Answer |
+|---|---|
+| What is it? | ... |
+| Why does this project need it? | ... |
+| How did I use it? | ... |
+| How can it fail? | ... |
+```

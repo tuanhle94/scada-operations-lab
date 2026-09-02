@@ -4,4 +4,4 @@ This project demonstrates a small pipeline-operations Supervisory Control and Da
 
 ## Current Status
 
-Part 1 is in progress: display one changing bearing-temperature value.
+Part 1 is complete: a Perspective session at `/pump-p101` shows Pump P-101 bearing temperature changing without operator input.

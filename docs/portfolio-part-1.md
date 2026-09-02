@@ -352,14 +352,14 @@ Do not write historian, alarm, or data-quality notes until those features exist.
 
 ## Checklist
 
-- [ ] Create a separate Git repository for the project.
-- [ ] Add a one-paragraph problem statement to the repository README.
-- [ ] Install and activate Ignition Maker Edition for personal use.
-- [ ] Create one Ignition Perspective project.
-- [ ] Create a tag folder for Station 1 and Pump P-101.
-- [ ] Add one simulated bearing-temperature tag whose value changes over time.
-- [ ] Create one pump-detail view.
-- [ ] Bind a numeric display to the bearing-temperature tag.
-- [ ] Launch a Perspective session and confirm that the displayed value changes.
+- [x] Create a separate Git repository for the project.
+- [x] Add a one-paragraph problem statement to the repository README.
+- [x] Install and activate Ignition Maker Edition for personal use.
+- [x] Create one Ignition Perspective project.
+- [x] Create a tag folder for Station 1 and Pump P-101.
+- [x] Add one simulated bearing-temperature tag whose value changes over time.
+- [x] Create one pump-detail view.
+- [x] Bind a numeric display to the bearing-temperature tag.
+- [x] Launch a Perspective session and confirm that the displayed value changes.
 
 When every box is checked, stop. Save the Designer project. Part 2 adds Postgres, history, and one high-temperature alarm.
