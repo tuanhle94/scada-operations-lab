@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: ignition
+      POSTGRES_PASSWORD: ignition
+      POSTGRES_DB: pipelineops
+    ports:
+      - "5432:5432"
+    volumes:
+      # Postgres 18+ expects the mount at /var/lib/postgresql (not .../data).
+      - pipelineops-pgdata:/var/lib/postgresql
+
+volumes:
+  pipelineops-pgdata:
