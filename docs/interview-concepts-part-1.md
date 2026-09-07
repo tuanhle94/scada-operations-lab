@@ -1,6 +1,6 @@
 # Interview Concepts: Part 1
 
-Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Do not claim history, alarms, OPC UA, or .NET until those exist.
+Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Part 1 is the live path. History and alarms are [Part 2](interview-concepts-part-2.md). Do not claim OPC UA, UDTs, or .NET until those exist.
 
 Say the **Speak this** line first. Use the four answers if they ask you to go deeper.
 
@@ -149,6 +149,9 @@ Perspective is Ignition’s web Human-Machine Interface. A view is only a screen
 **If they ask about Designer vs the browser:**  
 Designer is the editor. The browser session is what the operator sees. **Views** live under Project Browser → Perspective → Views. A view is not a URL until Page Configuration maps it. The Web Nav template’s Home / Charts / Alarms pages are starter chrome. They are not the pump screen.
 
+**If they ask the difference between a view and a page:**  
+A **view** is the graphic I build in Designer (`PumpDetail`). A **page** is the URL the operator opens (`/pump-p101`). Page Configuration maps view → URL. Launch the page path, not the view name. The same view can be the primary view of more than one page.
+
 ---
 
 ## 7. Designer vs code
@@ -187,6 +190,7 @@ Use this when they ask what you built so far:
 | Simulated expression tag | “I connected to field devices” (not yet) |
 | Quality Good or Error_Configuration | “The number is always right” |
 | Binding / subscription | “The page polls every second” |
+| View vs page URL | “The view name is the URL” / “I launched PumpDetail instead of `/pump-p101`” |
 | Built in Designer | “I coded the HMI in React / HTML” |
 | Bearing temperature in °F | “A random demo metric” |
-| Part 1 is one live value | “I already have alarms, history, and .NET” |
+| Part 1 is the live path; history and alarms are Part 2 | “I already have OPC UA, UDTs, and .NET” |

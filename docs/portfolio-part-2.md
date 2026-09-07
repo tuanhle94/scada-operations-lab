@@ -171,11 +171,19 @@ To force a long active period for the demo, temporarily change the expression to
 
 ### Block 5: Alarm views and journal
 
-**Alarm journal** (Gateway or Designer, depending on version):
+**Alarm journal** — Gateway webpage (`http://localhost:8088`), not Designer:
 
-1. Create an alarm journal named `PipelineOpsJournal`.
-2. Store it in database `PipelineOps`.
-3. Enable it for this project.
+1. Click **Services** on the far-left icon rail.
+2. In the secondary menu, click **Alarming**.
+3. Click **Journals**.
+4. Click **Create Alarm Journal**.
+5. Select **Database** (not Internal, not Remote). Click **Next**.
+6. **Name:** `PipelineOpsJournal`
+7. Set the database / datasource to connection **PipelineOps**.
+8. Click **Create Alarm Journal**.
+9. Confirm it is listed and enabled.
+
+*(8.1 wording: **Config → Alarming → Journal**.)*
 
 **Active alarms view:**
 
@@ -198,6 +206,49 @@ To force a long active period for the demo, temporarily change the expression to
 4. Return the value below the clear point (restore the sine, or set `148`).
 5. Confirm the alarm clears.
 6. On `/alarms-journal`, confirm the activate, ack, and clear events exist.
+
+### Demo: prove the rows in Postgres
+
+Ignition owns the historian and journal. Postgres holds the rows. Do not edit these tables by hand.
+
+In PowerShell, from the repo root (Docker must be running):
+
+1. Type `docker exec -it scada-operations-lab-postgres-1 psql -U ignition -d pipelineops` and press Enter.
+2. You should see the `pipelineops=#` prompt.
+3. Type `\dt` and press Enter. You should see historian tables (`sqlth_*`, `sqlt_data_1_YYYY_MM`) and journal tables (`alarm_events`, `alarm_event_data`).
+4. Type this and press Enter:
+
+```sql
+SELECT COUNT(*) FROM sqlt_data_1_2026_09;
+```
+
+5. You should get a count that grows while the sine is running. The table name is month-partitioned; if you are in a later month, use `\dt` and query the current `sqlt_data_1_*` table.
+6. Type this and press Enter:
+
+```sql
+SELECT tagid, floatvalue, t_stamp
+FROM sqlt_data_1_2026_09
+ORDER BY t_stamp DESC
+LIMIT 10;
+```
+
+7. `t_stamp` is milliseconds since epoch. New `floatvalue` rows mean history is writing.
+8. Type this and press Enter:
+
+```sql
+SELECT * FROM alarm_events ORDER BY eventtime DESC LIMIT 20;
+```
+
+9. Type this and press Enter:
+
+```sql
+SELECT * FROM alarm_event_data;
+```
+
+10. Look for `propname = 'ackNotes'` and the comment `Part 2 high bearing temp check`.
+11. Type `\q` and press Enter to leave `psql`.
+
+**Speak this while you do it:** the Power Chart and alarm journal read this storage. I am not using Postgres as a second SCADA.
 
 ## If Something Breaks
 
@@ -236,15 +287,17 @@ How can it fail?
 - [x] Start a local Postgres instance.
 - [x] Create and verify the Ignition database connection.
 - [x] Create a SQL Historian on `PipelineOps` and enable history on the bearing-temperature tag (Storage Provider is not Sample SQLite).
-- [ ] Add a historical trend to the pump-detail view.
-- [ ] Confirm that new values appear in the trend.
-- [ ] Configure one high-temperature alarm with an understandable threshold.
-- [ ] Configure an alarm journal so the event can be reviewed later.
-- [ ] Create an alarm view with an Alarm Status Table for active alarms.
-- [ ] Add an Alarm Journal Table for historical alarm events.
-- [ ] Drive the simulated temperature above the threshold and observe the alarm becoming active.
-- [ ] Acknowledge the alarm with a short comment.
-- [ ] Return the value below the threshold and confirm that the alarm clears.
-- [ ] Confirm that the alarm lifecycle appears in history.
+- [x] Add a historical trend to the pump-detail view.
+- [x] Confirm that new values appear in the trend.
+- [x] Configure one high-temperature alarm with an understandable threshold.
+- [x] Configure an alarm journal so the event can be reviewed later.
+- [x] Create an alarm view with an Alarm Status Table for active alarms.
+- [x] Add an Alarm Journal Table for historical alarm events.
+- [x] Drive the simulated temperature above the threshold and observe the alarm becoming active.
+- [x] Acknowledge the alarm with a short comment.
+- [x] Return the value below the threshold and confirm that the alarm clears.
+- [x] Confirm that the alarm lifecycle appears in history.
 
 When every box is checked, stop. Save Designer. Next is [Part 3: evidence](portfolio-part-3.md).
+
+Interview prep after this checklist: [interview-concepts-part-2.md](interview-concepts-part-2.md) (section **Interview prep after Part 2**). Claim Part 1 + Part 2 only. If the machine was off, start Docker Desktop and `docker compose up -d` before opening Ignition.

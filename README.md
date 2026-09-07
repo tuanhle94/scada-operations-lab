@@ -4,9 +4,9 @@ This project demonstrates a small pipeline-operations Supervisory Control and Da
 
 ## Current Status
 
-Part 1 is complete: a Perspective session at `/pump-p101` shows Pump P-101 bearing temperature changing without operator input.
+Part 2 is complete: bearing temperature is historized in Postgres, `/pump-p101` shows a live trend, and `HighBearingTemp` can be activated, acknowledged with a comment, cleared, and reviewed in the alarm journal.
 
-**Next:** [Part 2](docs/portfolio-part-2.md) — Postgres, trend, high-temperature alarm, acknowledge, clear, journal.
+**Next:** [Part 3](docs/portfolio-part-3.md) — screenshots, Gateway backup, one written problem, Git commit.
 
 ## Build order
 
