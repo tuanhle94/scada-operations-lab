@@ -1,6 +1,6 @@
 # Interview Concepts: Part 2
 
-Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Claim **Part 1 + Part 2 only**. Do not claim screenshots or a Gateway backup (Part 3), UDTs, OPC UA, or .NET.
+Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Claim **Parts 1–2** for the live slice; Part 3 evidence is [interview-concepts-part-3.md](interview-concepts-part-3.md). Do not claim UDTs, OPC UA, or .NET until those exist.
 
 ---
 
@@ -28,8 +28,8 @@ Lead with SCADA words, not Docker. If they ask how you store history, say: **Ign
 - “I have a plant PI / OPC UA / .NET API”
 - “I control the pump”
 
-**Next session (Part 3)**  
-Part 3 is evidence: screenshots, Gateway backup, one written problem, Git commit. That is interview packaging, not new SCADA features. Save Designer before you quit. If the PC was off, start Docker Desktop and run `docker compose up -d` from the repo root before opening Ignition.
+**Next after Part 2**  
+Part 3 packages evidence: screenshots, Gateway backup, written problems, Git commit. When that checklist is done, use [interview-concepts-part-3.md](interview-concepts-part-3.md).
 
 ---
 

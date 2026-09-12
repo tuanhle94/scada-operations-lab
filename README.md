@@ -4,9 +4,14 @@ This project demonstrates a small pipeline-operations Supervisory Control and Da
 
 ## Current Status
 
-Part 2 is complete: bearing temperature is historized in Postgres, `/pump-p101` shows a live trend, and `HighBearingTemp` can be activated, acknowledged with a comment, cleared, and reviewed in the alarm journal.
+Part 3 is complete: the first vertical slice is packaged for review.
 
-**Next:** [Part 3](docs/portfolio-part-3.md) — screenshots, Gateway backup, one written problem, Git commit.
+- Live value, Postgres history, trend, and alarm lifecycle (Parts 1–2)
+- Evidence screenshots in [`docs/evidence/part-3/`](docs/evidence/part-3/)
+- Gateway backup in [`backups/`](backups/)
+- Real failures documented in [`docs/evidence/part-3/problems-solved.md`](docs/evidence/part-3/problems-solved.md)
+
+**Next:** [Part 4](docs/portfolio-part-4.md) — Pump UDT, P-101 and P-102, overview, navigation.
 
 ## Build order
 
