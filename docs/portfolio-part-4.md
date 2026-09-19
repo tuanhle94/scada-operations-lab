@@ -1,5 +1,19 @@
 # Portfolio Part 4: Two Pumps from a UDT, Overview, Navigation
 
+## Official Ignition 8.3 manual
+
+Start with UDTs for the current build block. Read the remaining topics as you reach them; Part 4 implementation is still pending verification.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [User Defined Types (UDTs)](https://www.docs.inductiveautomation.com/docs/8.3/platform/tags/user-defined-types-udts) | Create Pump, create instances, and understand inherited settings and overrides. |
+| [Alarms in UDTs](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming/configuring-alarms/alarms-in-udts) | Define the shared alarm while keeping each pump identifiable. |
+| [Tag Bindings in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-bindings-in-perspective) | Use an indirect binding driven by pumpId for the live temperature. |
+| [Pages in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/pages-in-perspective) | Page navigation and passing pumpId through /pump/:pumpId. |
+| [Perspective Power Chart](https://www.docs.inductiveautomation.com/docs/8.3/appendix/components/perspective-components/perspective-chart-palette/perspective-power-chart) | Select the matching historical source when pump identity changes. |
+| [Gateway Backup and Restore](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/gateway-backup-and-restore) | Preserve configuration before the P-101 cutover and after verification. |
+
+
 Do not start this until [Part 3](portfolio-part-3.md) is complete.
 
 ## Cheat Sheet

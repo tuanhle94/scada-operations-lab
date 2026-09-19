@@ -1,5 +1,17 @@
 # Interview Concepts: Part 1
 
+## Official Ignition 8.3 manual
+
+Use these references to review the features in this part. These are study references; adding them does not record that you have read them or reverified the running lab.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [Types of Tags](https://www.docs.inductiveautomation.com/docs/8.3/platform/tags/types-of-tags) | Expression tags used for the simulated temperature. |
+| [Expression Language and Syntax](https://www.docs.inductiveautomation.com/docs/8.3/platform/expression-language-and-syntax) | How the temperature expression is evaluated. |
+| [Tag Bindings in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-bindings-in-perspective) | Direct tag bindings for the live display. |
+| [Pages in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/pages-in-perspective) | Mapping PumpDetail to the /pump-p101 page URL. |
+
+
 Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Part 1 is the live path. History and alarms are [Part 2](interview-concepts-part-2.md). Do not claim OPC UA, UDTs, or .NET until those exist.
 
 Say the **Speak this** line first. Use the four answers if they ask you to go deeper.

@@ -23,6 +23,7 @@ The user is new to Ignition. Any Designer, Gateway, Tag Browser, Perspective, or
 - Do not merely say “bind the tag” or “add a page.” Identify the widget, property (`props.value` versus `props.text`), and dialog buttons.
 - Explain the purpose briefly, then give a bounded build block and a visible pass condition.
 - Use Inductive University and the Ignition User Manual for product behavior. The assistant helps with sequence and explanation; it does not replace vendor training.
+- Include relevant official Ignition 8.3 User Manual links in guidance for every portfolio part, linking directly to the topics being built or explained so the user can study the source.
 
 ## Interview concepts with every part
 

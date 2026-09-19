@@ -1,5 +1,19 @@
 # Interview Concepts: Part 4
 
+## Official Ignition 8.3 manual
+
+Start with UDTs for the current build block. Read the remaining topics as you reach them; Part 4 implementation is still pending verification.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [User Defined Types (UDTs)](https://www.docs.inductiveautomation.com/docs/8.3/platform/tags/user-defined-types-udts) | Create Pump, create instances, and understand inherited settings and overrides. |
+| [Alarms in UDTs](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming/configuring-alarms/alarms-in-udts) | Define the shared alarm while keeping each pump identifiable. |
+| [Tag Bindings in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-bindings-in-perspective) | Use an indirect binding driven by pumpId for the live temperature. |
+| [Pages in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/pages-in-perspective) | Page navigation and passing pumpId through /pump/:pumpId. |
+| [Perspective Power Chart](https://www.docs.inductiveautomation.com/docs/8.3/appendix/components/perspective-components/perspective-chart-palette/perspective-power-chart) | Select the matching historical source when pump identity changes. |
+| [Gateway Backup and Restore](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/gateway-backup-and-restore) | Preserve configuration before the P-101 cutover and after verification. |
+
+
 **Do not use these answers in interviews until the [Part 4 checklist](portfolio-part-4.md) is complete.** Parts 1–3 are the live slice plus evidence. Part 4 adds reusable equipment and navigation.
 
 Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Do not claim OPC UA, alarm flood, or .NET until those exist.
@@ -27,6 +41,10 @@ A UDT is a reusable equipment template: members like bearing temperature, with u
 
 **If they ask “is a UDT a PLC type?”**  
 No. This is an Ignition tag model for the HMI/SCADA layer. The PLC may have its own structures later over OPC UA.
+
+**If they ask “should the definition show a changing temperature?”**
+
+No. A definition describes configuration; its members do not execute. The live simulation runs on an instance under **Tags**. Planned first-session check: create `Pump`, then verify `Station1/P102/BearingTemperature` before converting P-101. Implementation is still pending verification.
 
 ---
 
@@ -86,6 +104,31 @@ The selected pump must drive the heading, current value, historical trend, and a
 
 ---
 
+## 6. Historian schema ownership and inherited history settings
+
+**Speak this:**
+
+Ignition manages its SQL Historian tables. I configure the connection, historian, and tag history settings instead of writing migrations for those internal tables. My own application tables would still need their own schema management.
+
+| Prompt | Answer |
+|---|---|
+| What is it? | With tag history enabled, the selected Storage Provider routes samples to a configured historian. The SQL Historian creates and maintains its required tables and writes samples to Postgres. Multiple tags share historian tables and are distinguished by tag IDs; each pump does not need its own table. |
+| Why does this project need it? | Stored samples let the Power Chart show what happened before an alarm. Defining history on the Pump UDT lets instances inherit the same storage settings. |
+| How did I use it? | *(Part 4 pending verification.)* Plan: enable history on Pump/BearingTemperature and select the existing PipelineOpsHistory SQL Historian, then verify new samples from P102. The definition supplies configuration; running instances produce samples. |
+| How can it fail? | History disabled, wrong provider, unavailable database, insufficient database permissions, full storage, or an instance override that blocks the shared settings. Manually changing Ignition-owned tables can break history. |
+
+**If they ask “does this replace database migrations?”**
+
+For Ignition's internal historian schema, I use the product's supported configuration and upgrade process instead of writing my own migrations. This does not manage arbitrary application tables. I remain responsible for database availability, permissions, backups, and storage capacity. A Gateway backup does not include the Postgres history rows.
+
+**If they ask “does a 1-second execution rate mean one stored row per second?”**
+
+No. Fixed Rate execution controls how often the expression recalculates. History sampling and deadband settings determine which samples are recorded. Selecting a Storage Provider does not by itself enable history.
+
+Official manual: [History Providers](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/tag-historian/tag-history-providers), [UDTs](https://www.docs.inductiveautomation.com/docs/8.3/platform/tags/user-defined-types-udts), and [Gateway Backup and Restore](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/gateway-backup-and-restore).
+
+---
+
 ## 30-second story (only after Part 4 works)
 
 > After packaging the first pump slice, I modeled a Pump UDT, created P-101 and P-102 from it, built an overview with navigation to a parameterized detail view, and changed the UDT once so both pumps inherited the update. Still monitoring only. Still no OPC UA or .NET.
@@ -98,6 +141,8 @@ The selected pump must drive the heading, current value, historical trend, and a
 |---|---|
 | UDT definition vs instance | “I duplicated the tag folder” |
 | Change once on the UDT | “I edited both pumps by hand” |
+| Ignition manages its historian schema | “Ignition manages all my application tables” |
+| Execution rate and history sampling are separate | “A 1-second expression rate guarantees one database row per second” |
 | Parameterized view / tag path | “I copied PumpDetail for P-102” |
 | Overview + navigation | “I only have one orphan page” |
 | Still supervisory | “I control the pumps” / “I have OPC UA” |

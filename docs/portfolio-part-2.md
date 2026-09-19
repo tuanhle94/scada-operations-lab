@@ -1,5 +1,19 @@
 # Portfolio Part 2: History and One Alarm
 
+## Official Ignition 8.3 manual
+
+Use these references to review the features in this part. These are study references; adding them does not record that you have read them or reverified the running lab.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [Database Connections](https://www.docs.inductiveautomation.com/docs/8.3/platform/database-connections) | The Gateway connection to Postgres through JDBC. |
+| [History Providers](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/tag-historian/tag-history-providers) | SQL Historian configuration, separate from the database connection. |
+| [Perspective Power Chart](https://www.docs.inductiveautomation.com/docs/8.3/appendix/components/perspective-components/perspective-chart-palette/perspective-power-chart) | Historical pens and their data sources. |
+| [Configuring Alarms](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming/configuring-alarms) | Alarm conditions, deadband, and acknowledgment settings. |
+| [Alarming](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming) | Alarm states and the distinction between status and history. |
+| [Alarm Journal](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming/alarm-journal) | Storing alarm events using a database journal. |
+
+
 Do not start this until [Part 1](portfolio-part-1.md) is complete. Do not read [Part 4](portfolio-part-4.md) or later before this checklist is done.
 
 ## Cheat Sheet

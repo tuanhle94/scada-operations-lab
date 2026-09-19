@@ -1,5 +1,16 @@
 # Portfolio Part 3: Preserve Evidence
 
+## Official Ignition 8.3 manual
+
+Use these references to review the features in this part. These are study references; adding them does not record that you have read them or reverified the running lab.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [Gateway Backup and Restore](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/gateway-backup-and-restore) | Gateway configuration backup and restore scope. |
+| [Project Export and Import](https://www.docs.inductiveautomation.com/docs/8.3/platform/projects/project-export-and-import) | Project resources versus Gateway-level configuration. |
+| [Alarm Journal](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming/alarm-journal) | The stored events shown in the lifecycle evidence. |
+
+
 Do not start this until [Part 2](portfolio-part-2.md) is complete.
 
 ## Cheat Sheet

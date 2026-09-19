@@ -1,5 +1,17 @@
 # Portfolio Part 1: Display One Changing Value
 
+## Official Ignition 8.3 manual
+
+Use these references to review the features in this part. These are study references; adding them does not record that you have read them or reverified the running lab.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [Types of Tags](https://www.docs.inductiveautomation.com/docs/8.3/platform/tags/types-of-tags) | Expression tags used for the simulated temperature. |
+| [Expression Language and Syntax](https://www.docs.inductiveautomation.com/docs/8.3/platform/expression-language-and-syntax) | How the temperature expression is evaluated. |
+| [Tag Bindings in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-bindings-in-perspective) | Direct tag bindings for the live display. |
+| [Pages in Perspective](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/pages-in-perspective) | Mapping PumpDetail to the /pump-p101 page URL. |
+
+
 This is the document for the first build session. After the checklist, follow [build-order.md](build-order.md). Do not read the full [portfolio project](portfolio-project.md) before Part 1 works.
 
 ## Cheat Sheet

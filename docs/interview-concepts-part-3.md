@@ -1,5 +1,16 @@
 # Interview Concepts: Part 3
 
+## Official Ignition 8.3 manual
+
+Use these references to review the features in this part. These are study references; adding them does not record that you have read them or reverified the running lab.
+
+| Manual topic | What to review for this project |
+|---|---|
+| [Gateway Backup and Restore](https://www.docs.inductiveautomation.com/docs/8.3/platform/gateway/gateway-backup-and-restore) | Gateway configuration backup and restore scope. |
+| [Project Export and Import](https://www.docs.inductiveautomation.com/docs/8.3/platform/projects/project-export-and-import) | Project resources versus Gateway-level configuration. |
+| [Alarm Journal](https://www.docs.inductiveautomation.com/docs/8.3/platform/alarming/alarm-journal) | The stored events shown in the lifecycle evidence. |
+
+
 Memorize these as spoken answers. Each card is **what it is**, **why this project needs it**, **how you used it**, and **how it can fail**. Claim **Parts 1–3 only**. Do not claim UDTs, OPC UA, or .NET until those exist.
 
 ---
