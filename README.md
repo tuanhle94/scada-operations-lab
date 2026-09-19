@@ -13,6 +13,10 @@ Part 3 is complete: the first vertical slice is packaged for review.
 
 **Next:** [Part 4](docs/portfolio-part-4.md) — Pump UDT, P-101 and P-102, overview, navigation.
 
+## Working with Codex
+
+Repository instructions live in [`AGENTS.md`](AGENTS.md), migrated from the retired Cursor rules. They preserve click-by-click Ignition guidance, the build order, and interview-concept notes for each part. Start a new Codex session in this repository to load them automatically. See [Codex instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
+
 ## Build order
 
 Follow [docs/build-order.md](docs/build-order.md). Do not skip ahead.
