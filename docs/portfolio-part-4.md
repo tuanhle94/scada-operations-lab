@@ -40,6 +40,29 @@ Plants do not redraw every pump. Interviewers ask whether a tag and alarm change
 
 Parts 1–3 are marked complete in `build-order.md` and their session checklists. The large `portfolio-project.md` contains older unchecked items; use the session checklists for current progress.
 
+### Current checkpoint — 2026-10-10
+
+The following results are user-reported and supported by screenshots from the Designer and Perspective session:
+
+- `Station1/P101` and `Station1/P102` are both `Pump` UDT instances with changing `BearingTemperature` values, inherited history, and inherited alarm configuration.
+- The former hand-built P-101 folder is retained as disabled `Station1/P101_old` for rollback while Part 4 verification continues.
+- `/pump-p101` opens `PumpDetail` in the `PipelineOps` Perspective project. Its LED shows changing P-101 data and its Power Chart shows P-101 history, including new samples after the cutover.
+- `PumpDetail` now has an input value parameter `pumpId` with default `P101`.
+- The LED `props.value` uses an indirect tag binding with path `[default]Station1/{1}/BearingTemperature`, where reference `1` is the expression `{view.params.pumpId}`. The binding preview resolved successfully to a numeric value.
+
+This is a partial parameterization checkpoint, not completion of the reusable detail view. The heading, Power Chart history source, alarm filtering, `/pump/:pumpId` page mapping, overview, navigation, inheritance proof, and final evidence remain open.
+
+### Resume here
+
+Open the **PipelineOps** project in Designer and continue with `PumpDetail`:
+
+1. Bind the heading's `props.text` to `view.params.pumpId` so the visible title changes between P-101 and P-102.
+2. Temporarily change the view parameter from `P101` to `P102` and confirm both the heading and LED follow it; then restore the default to `P101`.
+3. Record the existing Power Chart pen's exact P-101 history source, browse P-102 to obtain its exact history source, and parameterize the source without replacing it with a live numeric tag binding.
+4. Create the `/pump/:pumpId` Page URL mapped to `PumpDetail`, then test `/pump/P101` and `/pump/P102` directly and after browser refresh.
+
+Do not mark the reusable-detail checklist item complete until the heading, live value, trend, and alarm identity all follow the same `pumpId`.
+
 **First session:** create `Pump`, then create and verify `P102` using Block 3 before changing P-101. Stop when P-102 has Good quality, changing temperature, history, and its own identifiable high alarm. Keep the existing P-101 screen working during this session.
 
 **Second session:** take a fresh Gateway backup using Part 3 Block 2, convert P-101 using Block 2 below, and parameterize the detail view. **Third session:** build overview/navigation, prove inheritance, and save evidence. These are stopping points, not deadlines.
@@ -208,10 +231,10 @@ Save screenshots of the overview, both detail pages, and inheritance proof under
 
 ## Checklist
 
-- [ ] Define tag naming: `Station{n}/P{id}/...`
-- [ ] Create reusable pump UDT with temperature, units, history, and high alarm.
-- [ ] Recreate or convert P-101 from the UDT and confirm the existing screen still works.
-- [ ] Create P-102 from the UDT without copying tags manually.
+- [x] Define tag naming: `Station{n}/P{id}/...`
+- [x] Create reusable pump UDT with temperature, units, history, and high alarm.
+- [x] Recreate or convert P-101 from the UDT and confirm the existing screen still works.
+- [x] Create P-102 from the UDT without copying tags manually.
 - [ ] Parameterize or reuse PumpDetail for both pumps.
 - [ ] Create an overview that shows both pumps.
 - [ ] Add navigation between overview and pump detail.

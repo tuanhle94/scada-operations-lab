@@ -12,6 +12,8 @@ If you want **Core certification**, those videos **are** the curriculum. An assi
 
 Timing, PLC literacy, MQTT, and OT security: [adjacent-skills.md](adjacent-skills.md). Do not pause Part 2 to “master MQTT.”
 
+For a software-developer view of what can be automated and what should remain in Designer or the Gateway webpage, see [Ignition: Coding Workflow vs Designer Workflow](ignition-code-vs-designer.md).
+
 ## How to learn while building
 
 Do not watch a complete Ignition course before the next checklist item. Use this loop:

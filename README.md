@@ -17,6 +17,8 @@ Part 3 is complete: the first vertical slice is packaged for review.
 
 Repository instructions live in [`AGENTS.md`](AGENTS.md), migrated from the retired Cursor rules. They preserve click-by-click Ignition guidance, the build order, and interview-concept notes for each part. Start a new Codex session in this repository to load them automatically. See [Codex instruction discovery](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
+For the boundary between Python/API automation, Designer configuration, and Gateway webpage work, see [Ignition: Coding Workflow vs Designer Workflow](docs/ignition-code-vs-designer.md).
+
 ## Build order
 
 Follow [docs/build-order.md](docs/build-order.md). Do not skip ahead.

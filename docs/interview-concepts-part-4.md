@@ -36,7 +36,7 @@ A UDT is a reusable equipment template: members like bearing temperature, with u
 |---|---|
 | What is it? | A tag data type definition under **UDT Definitions**. Instances inherit members and settings from that definition. |
 | Why does this project need it? | Interviewers ask whether I change an alarm once or copy tags by hand. A UDT is the plant answer. |
-| How did I use it? | *(Fill after Part 4.)* Created UDT `Pump` with `BearingTemperature` (°F, history, high alarm 155 / deadband 2), then instances for P-101 and P-102. |
+| How did I use it? | Created UDT `Pump` with `BearingTemperature` (Float, °F, fixed-rate expression), `PipelineOpsHistory`, and `HighBearingTemp` at 155°F with 2°F deadband, High priority, Manual ack, and required notes. Created P102 from it, then preserved the old P101 folder as disabled `P101_old` and replaced P101 with a UDT instance. The existing `/pump-p101` live value and history continued working after the cutover. |
 | How can it fail? | Editing only one instance’s override and thinking the definition changed, or breaking `/pump-p101` while converting the old folder tags. |
 
 **If they ask “is a UDT a PLC type?”**  
@@ -57,7 +57,7 @@ An instance is one piece of equipment created from the UDT — `Station1/P101` a
 |---|---|
 | What is it? | A live tag folder/object under **Tags** whose members come from a UDT definition. |
 | Why does this project need it? | Two pumps must share the same alarm and history rules without maintaining two hand-built trees. |
-| How did I use it? | *(Fill after Part 4.)* |
+| How did I use it? | Created `Station1/P102` from `Pump` without copying its member tag, then converted P101 while retaining disabled `P101_old` for rollback. Both instances showed changing values with inherited history and alarm configuration; `/pump-p101` showed live data and new historical samples from the replacement instance. |
 | How can it fail? | Wrong parent folder path, overridden member that no longer inherits, or deleting the only working P-101 tags before the instance works. |
 
 ---
@@ -71,7 +71,7 @@ One pump-detail view should take a tag path (or pump id) as a parameter. Overvie
 |---|---|
 | What is it? | View parameters + page navigation so the same graphic serves P-101 and P-102. |
 | Why does this project need it? | Six pumps later must not mean six nearly identical views. |
-| How did I use it? | *(Fill after Part 4.)* |
+| How did I use it? | *(In progress.)* Added an input value parameter `pumpId` to `PumpDetail`, defaulted it to `P101`, and changed the LED from a hard-coded P101 tag binding to `[default]Station1/{1}/BearingTemperature` with `{1}` supplied by `{view.params.pumpId}`. The heading, chart source, page route, overview, and navigation are still pending. |
 | How can it fail? | Hard-coded `[default]Station1/P101/...` left in the detail view, or overview with no page URL. |
 
 ---
@@ -99,7 +99,7 @@ The selected pump must drive the heading, current value, historical trend, and a
 |---|---|
 | What is it? | A `pumpId` input used consistently across a reusable detail view. |
 | Why does this project need it? | An operator must not see P-102's number next to P-101's trend or alarm. |
-| How did I use it? | *(Pending verification.)* Use `/pump/:pumpId`, an indirect live tag binding, and the chart's actual historical source for each pump; test navigation and direct URL refresh. |
+| How did I use it? | *(Partially verified.)* The live LED now uses `pumpId` through an indirect binding, and its binding preview resolves for default `P101`. The heading, historical source, alarm filter, `/pump/:pumpId` route, P102 browser test, and direct-refresh test are still pending. |
 | How can it fail? | Hard-coded title, historical source, or alarm filter; a numeric live binding used where the chart expects a history-path string. |
 
 ---
@@ -114,7 +114,7 @@ Ignition manages its SQL Historian tables. I configure the connection, historian
 |---|---|
 | What is it? | With tag history enabled, the selected Storage Provider routes samples to a configured historian. The SQL Historian creates and maintains its required tables and writes samples to Postgres. Multiple tags share historian tables and are distinguished by tag IDs; each pump does not need its own table. |
 | Why does this project need it? | Stored samples let the Power Chart show what happened before an alarm. Defining history on the Pump UDT lets instances inherit the same storage settings. |
-| How did I use it? | *(Part 4 pending verification.)* Plan: enable history on Pump/BearingTemperature and select the existing PipelineOpsHistory SQL Historian, then verify new samples from P102. The definition supplies configuration; running instances produce samples. |
+| How did I use it? | Enabled history on `Pump/BearingTemperature`, selected `PipelineOpsHistory`, and verified P102 samples in the Power Chart using the historian path ending in `station1/p102/bearingtemperature`. The definition supplies configuration; the P102 instance produces samples. |
 | How can it fail? | History disabled, wrong provider, unavailable database, insufficient database permissions, full storage, or an instance override that blocks the shared settings. Manually changing Ignition-owned tables can break history. |
 
 **If they ask “does this replace database migrations?”**
